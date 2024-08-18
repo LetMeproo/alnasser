@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Zain:wght@200;300;400;700;800;900&display=swap');
+
+
+
+body {
+    font-family: "Zain", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* المسافة بين الكروت */
+    justify-content: center; /* توسيط الكروت */
+}
+
+.card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    width: 100%;
+    max-width: 300px; /* تحديد أقصى عرض للبطاقة */
+    box-sizing: border-box; /* يشمل الحشو والحدود في عرض الكارت */
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.card-link {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    background-color: #deffff;
+    color: #123;
+    text-decoration: none;
+    font-size: 1.1em;
+    border-top: 1px solid #e0e0e0;
+}
+
+.card-link:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+    opacity: 0; 
+    transform: translateY(20px); 
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; 
+}
+
+.card.visible {
+    opacity: 1; 
+    transform: translateY(0); 
+}
+
+/* التحكم في الكروت على الشاشات الأصغر من 768px */
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(33.333% - 20px); /* 3 كروت في كل صف */
+        max-width: calc(33.333% - 20px); /* التأكد من عدم تجاوز الكارت للعرض المحدد */
+    }
+}
+
+/* التحكم في الكروت على الشاشات الأصغر من 480px */
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 calc(50% - 20px); /* 2 كروت في كل صف */
+        max-width: calc(50% - 20px); /* التأكد من عدم تجاوز الكارت للعرض المحدد */
+    }
+}
